@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>레퍼런스 | 국토포레스</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2b90d",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#221e10",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+
+        .project-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .border-gold-subtle {
+            border: 1px solid rgba(242, 185, 13, 0.1);
+        }
+
+        .project-card:hover {
+            border-color: #f2b90d;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-200 font-display transition-colors duration-300">
+    <!-- Global Header -->
+    <header class="fixed top-0 w-full z-50 bg-background-dark/95 border-b border-primary/10 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <span class="text-xl font-bold tracking-widest uppercase text-white"> <a href="intro.html">KUKTO
+                        FORES</a></span>
+            </div>
+            <nav class="hidden md:flex items-center space-x-10 text-sm font-medium tracking-widest uppercase">
+                <a class="text-slate-400 hover:text-primary transition-colors" href="company.html">About</a>
+                <a class="text-slate-400 hover:text-primary transition-colors" href="#">Developments</a>
+                <a class="text-primary border-b border-primary pb-1" href="portfolio.html">Portfolio</a>
+                <a class="text-slate-400 hover:text-primary transition-colors" href="#">Investors</a>
+                <a class="px-5 py-2 border border-primary text-primary hover:bg-primary hover:text-background-dark transition-all rounded-sm"
+                    href="#">Contact</a>
+            </nav>
+            <button class="md:hidden text-primary">
+                <span class="material-icons">menu</span>
+            </button>
+        </div>
+    </header>
+    <main class="pt-32 pb-20">
+        <!-- Hero Section -->
+        <section class="max-w-7xl mx-auto px-6 mb-16">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+                <div>
+                    <span class="text-primary uppercase tracking-[0.3em] text-xs font-semibold mb-3 block">Global
+                        Excellence</span>
+                    <h1 class="text-4xl md:text-6xl font-light text-white leading-tight">국토포레스 <br /><span
+                            class="font-bold">레퍼런스</span></h1>
+                </div>
+                <p class="max-w-md text-slate-400 font-light leading-relaxed">
+                    26년간 축적된 수많은 경험과 시공 노하우,
+
+                </p>
+            </div>
+        </section>
+        <!-- Filter Bar -->
+        <section class="max-w-7xl mx-auto px-6 mb-12">
+            <div class="flex flex-wrap items-center gap-8 border-b border-white/5 pb-4">
+                <button class="relative text-primary font-medium tracking-widest uppercase text-xs transition-colors">
+                    All Projects
+                    <span class="absolute -bottom-[17px] left-0 w-full h-0.5 bg-primary"></span>
+                </button>
+                <button
+                    class="text-slate-500 hover:text-primary font-medium tracking-widest uppercase text-xs transition-colors">Residential</button>
+                <button
+                    class="text-slate-500 hover:text-primary font-medium tracking-widest uppercase text-xs transition-colors">Commercial</button>
+                <button
+                    class="text-slate-500 hover:text-primary font-medium tracking-widest uppercase text-xs transition-colors">Urban
+                    Planning</button>
+                <div class="ml-auto flex items-center space-x-4 text-slate-500">
+                    <span class="text-[10px] uppercase tracking-widest">Sort By:</span>
+                    <select
+                        class="bg-transparent border-none text-xs uppercase tracking-widest text-white focus:ring-0 cursor-pointer">
+                        <option>Newest First</option>
+                        <option>Location</option>
+                        <option>Scale</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+        <!-- Project Grid -->
+        <section class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div
+                    class="project-card group relative bg-background-dark border-gold-subtle rounded-sm overflow-hidden transition-all duration-500 h-[500px]">
+                    <img alt="Luxia Tower"
+                        class="w-full h-full object-cover transition-transform duration-700 brightness-75 group-hover:brightness-50"
+                        data-alt="Modern glass skyscraper at dusk in Seoul"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfkCTnEMAkpGY_0zfmoP8gVcs2JrjXIsj5_n9blme3xauLCqSpKt-RtbyxoyaTxc0wGxLNeXZGAagG5mIdxDgOZ1B-C-SlbKB24yHX-9FInCcC8-lrw2FtOKO6QH-DF04onG8mQ2v_SwRhONEeCraDnwAxajYDpELserWtqwn7RJIoU9Gr5EbMeBFPWb1-emZBJrZOgErTf6C6WGeWnJuKFiW54n7hgmBG-LDvlqPIsUava4226M3nnRhsD4dblTH_qvjRzw_S9fR7" />
+                    <div class="absolute inset-0 p-8 flex flex-col justify-end">
+                        <div class="project-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                            <span class="text-primary text-xs uppercase tracking-[0.2em] mb-2 block">Commercial</span>
+                            <h3 class="text-2xl font-bold text-white mb-1">Luxia Tower</h3>
+                            <p class="text-slate-300 text-sm font-light mb-6">Seoul, South Korea</p>
+                            <a class="inline-flex items-center text-primary text-xs uppercase tracking-widest font-semibold group/link"
+                                href="#">
+                                View Details
+                                <span
+                                    class="material-icons text-sm ml-2 group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div
+                    class="project-card group relative bg-background-dark border-gold-subtle rounded-sm overflow-hidden transition-all duration-500 h-[500px] lg:mt-12">
+                    <img alt="The Onyx Plaza"
+                        class="w-full h-full object-cover transition-transform duration-700 brightness-75 group-hover:brightness-50"
+                        data-alt="Futuristic high-end development in Dubai marina"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsGcSMZTISYg123riiBu75jtW__ms2QIxEx3hFgGdCk_3cLmQnru1H7pi4GgEIPwA2mLUVPY9nyJbKoxnXd5r4A74rrVUskIJpt2wg2feE8A9oG5ciEEyZx-xK15iqwBHmDUIupH0iGo0Ob5QzOYe2KYUS-M0tmzVOLA20CKrGu2G9O6MHNniiZQoLhMX8eBlS6aWUdo_F2Lr9MiWW5l9srlNERKrzrhC0VrMk6lx9XNh4L-ccuKd19V3U7zlf1XXV_AI0onoQwASQ" />
+                    <div class="absolute inset-0 p-8 flex flex-col justify-end">
+                        <div class="project-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                            <span class="text-primary text-xs uppercase tracking-[0.2em] mb-2 block">Mixed Use</span>
+                            <h3 class="text-2xl font-bold text-white mb-1">The Onyx Plaza</h3>
+                            <p class="text-slate-300 text-sm font-light mb-6">Dubai, UAE</p>
+                            <a class="inline-flex items-center text-primary text-xs uppercase tracking-widest font-semibold group/link"
+                                href="#">
+                                View Details
+                                <span
+                                    class="material-icons text-sm ml-2 group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div
+                    class="project-card group relative bg-background-dark border-gold-subtle rounded-sm overflow-hidden transition-all duration-500 h-[500px]">
+                    <img alt="Azure Residences"
+                        class="w-full h-full object-cover transition-transform duration-700 brightness-75 group-hover:brightness-50"
+                        data-alt="Luxury waterfront residential complex in Monaco"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtcTEqmJS1h3VgJwObuUFTOiHXMx0buiq1aAx5_dQ6-a9SgVWJc2FIAbOGsB6r0PjPdGYhekqmbQL5Z8JVuxnje-1mnw7icOYI7_xUuL_uig_kKa3_LBtlxknqCOGvUXFLThpDgCoVg_pC1Wp_VghS65QSWQg6cmvrRtDraKV1r7SetPp8zESZO0qHMMXJfamCig-3Ns01WmwKDIWeXYeRtOFyx0lx2x0RYjtLd92XJGDIuaaa_JmIcpDqOvKAijfp9SSw7pFrdihr" />
+                    <div class="absolute inset-0 p-8 flex flex-col justify-end">
+                        <div class="project-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                            <span class="text-primary text-xs uppercase tracking-[0.2em] mb-2 block">Residential</span>
+                            <h3 class="text-2xl font-bold text-white mb-1">Azure Residences</h3>
+                            <p class="text-slate-300 text-sm font-light mb-6">Monte Carlo, Monaco</p>
+                            <a class="inline-flex items-center text-primary text-xs uppercase tracking-widest font-semibold group/link"
+                                href="#">
+                                View Details
+                                <span
+                                    class="material-icons text-sm ml-2 group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 4 -->
+                <div
+                    class="project-card group relative bg-background-dark border-gold-subtle rounded-sm overflow-hidden transition-all duration-500 h-[500px]">
+                    <img alt="Velvet Quarter"
+                        class="w-full h-full object-cover transition-transform duration-700 brightness-75 group-hover:brightness-50"
+                        data-alt="Artistic urban planning district with parks"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaX217frqSjvdTgOP6Y0Ivgms8irNqdzQksgoOfE0peNS9CjomBlzVj0knc5Ggxk1KHwaq_TxCijjqJ1gmQJXeHCT6zcG6RF-IZ_JOeoOBO1u2sEgLKCG7BRZ6r0Nb1Iai7jdotPFmFMUry16ePIESg7rOx23pVQfS9d9BQk2eJh-Y2_Vwl0gsxV5K7T4E6i6F3zIixZTg9O7oDoBibqVKOL0xELZMS0BmrIN-fNLP-pzd864LF4l0z2hluo7axQ2nXvq6ifg8D0V2" />
+                    <div class="absolute inset-0 p-8 flex flex-col justify-end">
+                        <div class="project-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                            <span class="text-primary text-xs uppercase tracking-[0.2em] mb-2 block">Urban
+                                Planning</span>
+                            <h3 class="text-2xl font-bold text-white mb-1">Velvet Quarter</h3>
+                            <p class="text-slate-300 text-sm font-light mb-6">London, UK</p>
+                            <a class="inline-flex items-center text-primary text-xs uppercase tracking-widest font-semibold group/link"
+                                href="#">
+                                View Details
+                                <span
+                                    class="material-icons text-sm ml-2 group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 5 -->
+                <div
+                    class="project-card group relative bg-background-dark border-gold-subtle rounded-sm overflow-hidden transition-all duration-500 h-[500px] lg:mt-12">
+                    <img alt="Summit Peak"
+                        class="w-full h-full object-cover transition-transform duration-700 brightness-75 group-hover:brightness-50"
+                        data-alt="High-altitude luxury ski resort architecture"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiifxDKrCDluml0yxnMDPYfAZP3T6eSHC6pS2-JnmY1SMI_m67mx6dr6t1Tof374IymgW6fnCoG5xuWPWfvKxaf5JBpfecxDpwAZktMBAkiy6YqqUrD6hZanwChuuD8vSB68wpAyWnSPY6Bk9NIVQoZZuplziGiNuw00WFQQyPB1XOspFsu4sm9043LKctHGmJ8QrUv5oAddU9nHY4VAugGwnETAQ3XXPiBl-j9DusDsR1Rpxp3c3_uhUdoSy5CA92rgfMnXuRqCEe" />
+                    <div class="absolute inset-0 p-8 flex flex-col justify-end">
+                        <div class="project-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                            <span class="text-primary text-xs uppercase tracking-[0.2em] mb-2 block">Hospitality</span>
+                            <h3 class="text-2xl font-bold text-white mb-1">Summit Peak</h3>
+                            <p class="text-slate-300 text-sm font-light mb-6">Aspen, USA</p>
+                            <a class="inline-flex items-center text-primary text-xs uppercase tracking-widest font-semibold group/link"
+                                href="#">
+                                View Details
+                                <span
+                                    class="material-icons text-sm ml-2 group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 6 -->
+                <div
+                    class="project-card group relative bg-background-dark border-gold-subtle rounded-sm overflow-hidden transition-all duration-500 h-[500px]">
+                    <img alt="The Gilded Pavilion"
+                        class="w-full h-full object-cover transition-transform duration-700 brightness-75 group-hover:brightness-50"
+                        data-alt="Exotic gold-accented pavilion in Singapore"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDD5U1hT0Ir9WpYYqpRP7I8vOIv4yyoIqzl9vTeboxv_nbTYZ8I5k9WVcAcKXmaW0NJ5sNtKLt4JFF66XvlbNIzGPO9DIzFg3Zk2IZHt80eOAyCsoRIO8gqIpBja6N3RWzMrp5Amaqv9Z3xURSZU0obTYlRZ1frRpuRcptyKClspTRIuAku1eWxJPOu8mkCCnGzlBcPns1WVz5-2owO_dSAAMWb5BYZguKP3FT_jElVBnSV-DC1sy0zbwJDwDptMZiX_ra6_orcamC7" />
+                    <div class="absolute inset-0 p-8 flex flex-col justify-end">
+                        <div class="project-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                            <span class="text-primary text-xs uppercase tracking-[0.2em] mb-2 block">Cultural</span>
+                            <h3 class="text-2xl font-bold text-white mb-1">Gilded Pavilion</h3>
+                            <p class="text-slate-300 text-sm font-light mb-6">Marina Bay, Singapore</p>
+                            <a class="inline-flex items-center text-primary text-xs uppercase tracking-widest font-semibold group/link"
+                                href="#">
+                                View Details
+                                <span
+                                    class="material-icons text-sm ml-2 group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Pagination / Load More -->
+        <section class="max-w-7xl mx-auto px-6 mt-20 text-center">
+            <button
+                class="px-12 py-4 border border-white/20 text-white uppercase tracking-[0.3em] text-xs hover:border-primary hover:text-primary transition-all rounded-sm">
+                Explore More Projects
+            </button>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-black border-t border-white/5 py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center space-x-2 mb-6">
+                        <div class="w-6 h-6 bg-primary rounded-sm flex items-center justify-center">
+                            <span class="text-background-dark font-bold text-sm">L</span>
+                        </div>
+                        <span class="text-lg font-bold tracking-widest uppercase text-white">Luxia</span>
+                    </div>
+                    <p class="text-slate-500 max-w-sm leading-relaxed text-sm">
+                        Redefining the boundaries of architecture and luxury living. We acquire, develop, and manage the
+                        world's most prestigious assets.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white text-xs uppercase tracking-widest font-bold mb-6">Contact</h4>
+                    <p class="text-slate-500 text-sm mb-2">Park Avenue, New York, NY</p>
+                    <p class="text-slate-500 text-sm mb-2">+1 (212) 555-0198</p>
+                    <p class="text-slate-500 text-sm">contact@luxiaholdings.com</p>
+                </div>
+                <div>
+                    <h4 class="text-white text-xs uppercase tracking-widest font-bold mb-6">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a class="text-slate-500 hover:text-primary transition-colors" href="#">Instagram</a>
+                        <a class="text-slate-500 hover:text-primary transition-colors" href="#">LinkedIn</a>
+                        <a class="text-slate-500 hover:text-primary transition-colors" href="#">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-600 text-[10px] uppercase tracking-widest">© 2024 Luxia Holdings. All rights
+                    reserved.</p>
+                <div class="flex space-x-8">
+                    <a class="text-slate-600 text-[10px] uppercase tracking-widest hover:text-white transition-colors"
+                        href="#">Privacy Policy</a>
+                    <a class="text-slate-600 text-[10px] uppercase tracking-widest hover:text-white transition-colors"
+                        href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
