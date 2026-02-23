@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>성공적인 분양대행, 국토포레스</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2b90d",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#221e10",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(34, 30, 16, 0.4) 0%, rgba(34, 30, 16, 0.2) 50%, rgba(34, 30, 16, 0.8) 100%);
+        }
+
+        .letter-spacing-widest {
+            letter-spacing: 0.25em;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-white selection:bg-primary selection:text-background-dark">
+    <!-- Cinematic Hero Section -->
+    <main class="relative h-screen w-full overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img alt="Modern urban cityscape at dusk"
+                class="w-full h-full object-cover scale-105 transition-transform duration-[10000ms]"
+                data-alt="Modern urban cityscape at dusk with warm lights"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFuB31BGWMHR0lp351JN1LEz7lm7FDXiTWYTsVDqJ-_u1A02me9acX68rDEz6naX5n045_-smdkmeDPkepnBZLOrBy4Awho39EMR6_GhsXmmH3p-C9MzgzEppKlPsfk2fGEU5oktH5wYNzyFmhfUzsMQRjX-8zmQKoW5N9XNusqxLMWpg5GmO-G1CxsrktpK9MOaYGRU8nYk8vqdT_0ArnXiI1sVVewv-X6z_pWIVHWRrfNaSc6vD2b-sLn_xWYY4fA1O27wL20GGF" />
+            <div class="absolute inset-0 hero-overlay z-10"></div>
+        </div>
+        <!-- Top Navigation -->
+        <nav class="fixed top-0 left-0 w-full z-50 px-8 py-6 flex items-center justify-between">
+            <!-- Logo Block -->
+            <div class="flex-shrink-0">
+                <div class="bg-primary p-4 rounded shadow-lg flex items-center justify-center">
+                    <span class="text-background-dark font-bold text-xl tracking-[0.2em]">KUKTO FORES</span>
+                </div>
+            </div>
+            <!-- Central Menu Hamburger -->
+            <button
+                class="group flex flex-col items-center justify-center space-y-1.5 p-4 hover:bg-white/10 rounded-full transition-all duration-300">
+                <span class="w-8 h-0.5 bg-white group-hover:bg-primary transition-colors"></span>
+                <span class="w-8 h-0.5 bg-white group-hover:bg-primary transition-colors"></span>
+                <span class="w-8 h-0.5 bg-white group-hover:bg-primary transition-colors"></span>
+                <span class="text-[10px] uppercase tracking-[0.3em] mt-1 opacity-80">Menu</span>
+            </button>
+            <!-- Language Switcher -->
+            <div class="flex items-center space-x-4 text-sm font-medium tracking-widest">
+                <a href="company.html"><button class="hover:text-primary transition-colors opacity-60">회사소개</button></a>
+                <span class="opacity-30">|</span>
+                <a href="business.html"></a><button
+                    class="hover:text-primary transition-colors pb-0.5">사업영역</button></a>
+                <span class="opacity-30">|</span>
+                <a href="portfolio.html"><button class="hover:text-primary transition-colors pb-0.5">레퍼런스</button></a>
+            </div>
+        </nav>
+        <!-- Center Content -->
+        <div class="relative z-20 flex flex-col items-center justify-center h-full text-center px-4">
+            <p class="text-primary text-sm font-medium tracking-[0.5em] mb-6 opacity-90 uppercase">EST. 1998 — Real
+                Estate Excellence</p>
+            <h1 class="font-serif text-6xl md:text-8xl lg:text-9xl font-light mb-8 max-w-6xl leading-tight">
+                현명한 선택,<br />
+                <span>국토포레스</span>
+            </h1>
+            <div class="w-24 h-px bg-primary/50 mb-8"></div>
+            <p class="max-w-xl text-lg text-white/70 font-light tracking-wide leading-relaxed">
+                Pioneering the future of luxury living and commercial architecture through visionary investment and
+                sustainable growth.
+            </p>
+        </div>
+    </main>
+    <!-- Content Sections (Teasers) -->
+    <section
+        class="relative z-30 bg-background-dark px-8 py-32 grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-white/5">
+        <div class="space-y-6 group">
+            <div class="aspect-[4/5] overflow-hidden rounded-lg">
+                <img alt="Corporate architectural design"
+                    class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
+                    data-alt="Modern geometric building architecture"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDK3gnKJ_L_EStZqSIpPY9ZhYjUFR2ZlgQ9151ynHcBEHV6qqMvNcKRItg0Ap6kBkmot6rEHglktjOmBQsODN8Ha0q1G-0-1C80FZypSUNt1y1lpKJUs1of68sgOmYFSs2QZfaBglNqHCRFMlcWGUZhdWOmDQYAKN1_Cw41KGyCdkHNfwLuUL-PSrTtODhcM9ecRBRlndkKqVX83w-DuO3iVX6i817hGJJEDabXckFqVnQMjAyAf9uJBSqlOllEjI3rehohQ3S0oRb3" />
+            </div>
+            <h3 class="text-primary text-xs tracking-[0.3em] font-semibold uppercase">Business</h3>
+            <h2 class="text-3xl">사업영역</h2>
+            <p class="text-white/50 text-sm leading-relaxed">Discover our landmark projects that redefine urban skylines
+                and luxury residency experiences globally.</p>
+            <a class="inline-block pt-4 text-xs tracking-widest border-b border-primary text-primary pb-1"
+                href="portfolio.html">VIEW BUSINESS</a>
+        </div>
+        <div class="space-y-6 group">
+            <div class="aspect-[4/5] overflow-hidden rounded-lg">
+                <img alt="Minimalist office interior"
+                    class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
+                    data-alt="Luxury minimalist office interior with gold accents"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAq9csWLhx2vy3IzWTTYbc8uRzMNKJ080xbo59r-mejuu3ySFqJ8AwNPtmYQuFNXoG4FffBCXqvU6rsq2L2FTueMuF0-yfRhZy6oIEqOXRE-oajutS2Wgqiv0TTFNxcCeNle50XJeP-CbkIYQIsY_i3cD0zd8mQArFo3OWnlaflpZqKj5eaFITLaxqXdLZySP_ClJA5TAQVusk7bFYETN9Mdc2WiTeuJejdfct7anHQPG09SsvPpHw48BmmQt5ZjTxtu5aLlB9VTpb4" />
+            </div>
+            <h3 class="text-primary text-xs tracking-[0.3em] font-semibold uppercase">Reference</h3>
+            <h2 class="text-3xl">운영제안</h2>
+            <p class="text-white/50 text-sm leading-relaxed">Discover our landmark projects that redefine urban skylines
+                and luxury residency experiences globally.</p>
+            <a class="inline-block pt-4 text-xs tracking-widest border-b border-primary text-primary pb-1"
+                href="portfolio.html">VIEW PROJECTS</a>
+        </div>
+        <div class="space-y-6 group">
+            <div class="aspect-[4/5] overflow-hidden rounded-lg">
+                <img alt="Tall skyscraper view from below"
+                    class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
+                    data-alt="Glass skyscraper reflecting sunlight at dusk"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOc1TQwp4EH9Q2tm9hbxFHeKEItcGAJojzC4xRzaHzvaVPB_s9QrLwuB-LIzX9o-JgLs6P9URJxohAMxjS7cuhyNLUwRjX1patXiMDJHTZvs3_ZstAM6B3g0Tdde-znRP4Y75GPx9tQ3Zvy-RF0zyrMZf8gfFZCEu6qTLCE4JHl2Lgssjto2yys19fF1Aeg06CNrLpzoKPAsH8AlqJsmg5tYtUIiFXXyZM7i5HIDHfrbIirNCNGNdg-xC9FWhDVNA-Q7k1gwNFRIwv" />
+            </div>
+            <h3 class="text-primary text-xs tracking-[0.3em] font-semibold uppercase">Reference</h3>
+            <h2 class="text-3xl">레퍼런스</h2>
+            <p class="text-white/50 text-sm leading-relaxed">Discover our landmark projects that redefine urban skylines
+                and luxury residency experiences globally.</p>
+            <a class="inline-block pt-4 text-xs tracking-widest border-b border-primary text-primary pb-1"
+                href="portfolio.html">VIEW PROJECTS</a>
+        </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-background-dark border-t border-white/5 px-8 py-20">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start space-y-12 md:space-y-0">
+            <div class="space-y-8 max-w-sm">
+                <div class="bg-primary px-3 py-1.5 inline-block rounded-sm">
+                    <span class="text-background-dark font-bold tracking-widest text-sm"></span>
+                </div>
+                <p class="text-white/40 text-sm leading-relaxed font-light">
+                    고객의 기대를 충분히 만족시킬 수 있는 풍부한 분양경험을 축적하여
+                    철저한 분양사의 교육과 정예화된 조직,
+                    과학적인 시장분석 기법을 통하여 성공적인 업무를 진행하고 있습니다.
+                </p>
+            </div>
+            <div class="grid grid-cols-2 gap-x-20 gap-y-8">
+                <div class="space-y-4">
+                    <h4 class="text-xs tracking-[0.3em] font-bold text-primary uppercase">Offices</h4>
+                    <ul class="text-sm space-y-2 text-white/50 font-light">
+                        <li>경기도 수원시</li>
+                        <li>영통구 중부대로462번길</li>
+                        <li>41-4</li>
+                    </ul>
+                </div>
+                <div class="space-y-4">
+                    <h4 class="text-xs tracking-[0.3em] font-bold text-primary uppercase">CONTACT US</h4>
+                    <ul class="text-sm space-y-2 text-white/50 font-light">
+                        <li>TEL. 031-205-5444</li>
+                        <li>FAX. 031-283-3444</a></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div
+            class="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/5 flex justify-between items-center text-[10px] tracking-widest text-white/30">
+            <p>© KUKTO FORES ALL RIGHTS RESERVED.</p>
+            <p class="flex space-x-6">
+                <span class="cursor-pointer hover:text-white transition-colors uppercase">Privacy Policy</span>
+                <span class="cursor-pointer hover:text-white transition-colors uppercase">Cookie Policy</span>
+            </p>
+        </div>
+    </footer>
+</body>
+
+</html>
