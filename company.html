@@ -35,34 +35,29 @@
     <style type="text/tailwindcss">
         @layer base {
             body {
-                @apply font-sans antialiased text-slate-800 bg-white;
+                @apply font-sans antialiased text-slate-800 bg-background-dark;
             }
         }
         .hero-overlay {
-            background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.5) 100%);
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.6) 100%);
         }
-        .nav-active::after {
-            content: '';
-            position: absolute;
-            bottom: -1px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 0;
-            border-left: 8px solid transparent;
-            border-right: 8px solid transparent;
-            border-bottom: 8px solid white;
+        
+        /* Ken Burns Effect like Reference mood */
+        @keyframes ken-burns {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+        .animate-ken-burns {
+            animation: ken-burns 20s ease-out infinite alternate;
         }
     </style>
 </head>
 
-<body>
+<body class="bg-background-dark">
     <!-- Global Header -->
     <header class="fixed top-0 w-full z-50 bg-background-dark/95 border-b border-primary/10 backdrop-blur-md">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            
             <div class="flex items-center space-x-2">
-                <span class="text-xl font-bold tracking-widest uppercase text-white">
                 <a href="index.html" class="block">
                     <img src="img/logo.png" alt="KUKTO FORES" class="w-[10vw] min-w-[100px] max-w-[150px] h-auto object-contain">
                 </a>
@@ -80,50 +75,97 @@
             </button>
         </div>
     </header>
-    <main>
-        <section class="relative h-[600px] flex items-center justify-center overflow-hidden">
-            <img alt="Architectural Skyline" class="absolute inset-0 w-full h-full object-cover" src="img/00-4.jpg" />
-            <div class="absolute inset-0 hero-overlay"></div>
-            <div class="relative z-10 text-center">
-                <h1 class="text-6xl md:text-8xl font-bold text-white tracking-widest">회사소개</h1>
+
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section class="relative h-[70vh] flex items-center overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img alt="Corporate Building" class="w-full h-full object-cover animate-ken-burns" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000" />
+                <div class="absolute inset-0 hero-overlay"></div>
+            </div>
+            <div class="relative z-10 max-w-7xl mx-auto px-6 w-full">
+                <div class="max-w-3xl">
+                    <span class="text-primary uppercase tracking-[0.4em] text-xs font-semibold mb-6 block">About Kukto Fores</span>
+                    <h1 class="text-5xl md:text-7xl font-bold text-white leading-tight mb-8">
+                        탁월한 기획으로<br />
+                        <span class="text-primary">성공의 가치</span>를 실현합니다.
+                    </h1>
+                    <p class="text-slate-300 text-lg font-light leading-relaxed max-w-xl">
+                        국토포레스는 고객의 기대를 뛰어넘는 성공적인 프로젝트 수행을 위해 끊임없이 도전하며, 부동산 시장의 새로운 기준을 제시합니다.
+                    </p>
+                </div>
             </div>
         </section>
         
-        <section class="py-24 max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
-                <div class="aspect-square bg-[#f5f5f5] flex items-center justify-center p-4">
-                    <img alt="Luxia Holdings Portfolio" class="w-full h-full object-cover shadow-2xl"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtcTEqmJS1h3VgJwObuUFTOiHXMx0buiq1aAx5_dQ6-a9SgVWJc2FIAbOGsB6r0PjPdGYhekqmbQL5Z8JVuxnje-1mnw7icOYI7_xUuL_uig_kKa3_LBtlxknqCOGvUXFLThpDgCoVg_pC1Wp_VghS65QSWQg6cmvrRtDraKV1r7SetPp8zESZO0qHMMXJfamCig-3Ns01WmwKDIWeXYeRtOFyx0lx2x0RYjtLd92XJGDIuaaa_JmIcpDqOvKAijfp9SSw7pFrdihr" />
-                </div>
-                <div class="flex flex-col">
-                    <span class="text-luxia-gold font-bold tracking-widest text-sm mb-8">CEO MESSAGE</span>
-                    <h2 class="text-4xl md:text-5xl font-bold text-slate-900 leading-[1.3] mb-12">
-                        탁월한 기획으로<br />
-                        당신의 성공을<br />
-                        완성하겠습니다.
-                    </h2>
-                    <div class="space-y-6 text-slate-600 leading-relaxed font-light">
-                        <p>
-                            국토포레스는 고객의 기대를 초월하여 성공적인 프로젝트를 수행하기 위하여 저희가 목표로 내세운 가치이며 고객 중심에서 고객의 기대를 앞서가며 진정한 사업 성공을
-                            보장합니다.
-                        </p>
-                        <p>
-                            국토포레스는 갈수록 전문화되고 까다로워진 소비자들의 만족스러운 결과를 위하여 철저한 사전조사와 기획, 프로젝트 수행능력 및 사후관리를 통해 서두에서 언급한 목표의
-                            가치를 지킬 것을 약속드립니다.
-                        </p>
-                        <p>
-                            고객만족! 그 이상의 가치를 넘어서기 위해 수많은 현장에서 쌓은 경험과 전문지식 그리고 운영관리를 바탕으로 귀 조합의 프로젝트 성공을 위하여 끊임없는 노력을 다할
-                            것을 약속드립니다.
-                        </p>
+        <!-- CEO Message Section -->
+        <section class="py-32 bg-background-dark border-t border-white/5">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+                    <div class="relative group">
+                        <div class="aspect-[4/5] bg-slate-800 overflow-hidden rounded-sm">
+                            <img alt="CEO Portfolio" class="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
+                                src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=1000" />
+                        </div>
+                        <div class="absolute -bottom-8 -right-8 w-48 h-48 border border-primary/20 -z-10 group-hover:translate-x-4 group-hover:translate-y-4 transition-transform duration-500"></div>
                     </div>
-                    <div class="mt-16 flex items-end justify-between border-t border-slate-100 pt-8">
-                        <div class="flex flex-col">
-                            <span class="text-slate-900 text-lg font-bold">국토포레스 대표이사 </span>
+                    <div class="flex flex-col">
+                        <span class="text-luxia-gold font-bold tracking-[0.3em] text-sm mb-10 uppercase">CEO Message</span>
+                        <h2 class="text-4xl md:text-5xl font-bold text-white leading-[1.3] mb-12">
+                            고객의 신뢰를 바탕으로<br />
+                            부동산의 <span class="text-primary">새로운 미래</span>를<br />
+                            설계하겠습니다.
+                        </h2>
+                        <div class="space-y-8 text-slate-400 leading-relaxed font-light text-lg">
+                            <p>
+                                국토포레스는 단순히 건물을 분양하는 것을 넘어, 고객의 소중한 자산 가치를 극대화하고 더 나은 주거 문화를 창출하는 것을 목표로 합니다.
+                            </p>
+                            <p>
+                                우리는 수많은 현장에서 쌓은 풍부한 경험과 전문 지식을 바탕으로, 철저한 시장 분석과 창의적인 마케팅 전략을 통해 파트너사의 성공을 보장합니다.
+                            </p>
+                            <p>
+                                고객만족 그 이상의 가치를 실현하기 위해 국토포레스의 모든 임직원은 열정과 책임감을 가지고 끊임없이 노력할 것을 약속드립니다.
+                            </p>
+                        </div>
+                        <div class="mt-16 pt-10 border-t border-white/10 flex items-center justify-between">
+                            <div>
+                                <p class="text-white text-xl font-bold tracking-widest">국토포레스 대표이사</p>
+                                <p class="text-primary mt-2 font-serif italic text-2xl">Kukto Fores CEO</p>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- Core Values Section (Reference Mood) -->
+        <section class="py-32 bg-[#1f1b0f] border-t border-white/5">
+            <div class="max-w-7xl mx-auto px-6 text-center mb-24">
+                <span class="text-primary uppercase tracking-[0.4em] text-xs font-semibold mb-4 block">Our Values</span>
+                <h2 class="text-4xl md:text-5xl font-bold text-white uppercase tracking-wider">핵심 가치</h2>
+            </div>
+            <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12">
+                <!-- Value 1 -->
+                <div class="p-12 border border-white/5 bg-background-dark/50 hover:border-primary transition-all duration-500 group">
+                    <span class="material-symbols-outlined text-primary text-5xl mb-8 group-hover:scale-110 transition-transform">insights</span>
+                    <h3 class="text-2xl font-bold text-white mb-6">전문성 (Expertise)</h3>
+                    <p class="text-slate-400 font-light leading-relaxed">철저한 데이터 분석과 전문가들의 통찰력을 통해 프로젝트의 성공 가능성을 100%로 끌어올립니다.</p>
+                </div>
+                <!-- Value 2 -->
+                <div class="p-12 border border-white/5 bg-background-dark/50 hover:border-primary transition-all duration-500 group">
+                    <span class="material-symbols-outlined text-primary text-5xl mb-8 group-hover:scale-110 transition-transform">handshake</span>
+                    <h3 class="text-2xl font-bold text-white mb-6">신뢰 (Trust)</h3>
+                    <p class="text-slate-400 font-light leading-relaxed">파트너사와의 투명한 협력 관계를 유지하며, 약속한 결과를 반드시 실현하는 신뢰의 경영을 실천합니다.</p>
+                </div>
+                <!-- Value 3 -->
+                <div class="p-12 border border-white/5 bg-background-dark/50 hover:border-primary transition-all duration-500 group">
+                    <span class="material-symbols-outlined text-primary text-5xl mb-8 group-hover:scale-110 transition-transform">auto_awesome</span>
+                    <h3 class="text-2xl font-bold text-white mb-6">혁신 (Innovation)</h3>
+                    <p class="text-slate-400 font-light leading-relaxed">변화하는 시장 환경에 발맞추어 기존의 틀을 깨는 창의적인 마케팅과 차별화된 전략을 제시합니다.</p>
+                </div>
+            </div>
         </section>
     </main>
+
     <!-- Footer -->
     <footer class="bg-black border-t border-white/5 py-16">
         <div class="max-w-7xl mx-auto px-6">
@@ -132,7 +174,7 @@
                     <div class="flex items-center space-x-2 mb-6">
                         <span class="text-lg font-bold tracking-widest uppercase text-white">KUKTO FORES</span>
                     </div>
-                    <p class="text-slate-510 max-w-sm leading-relaxed text-sm">
+                    <p class="text-slate-400 max-w-sm leading-relaxed text-sm">
                         고객의 기대를 충분히 만족시킬 수 있는 풍부한 분양경험을 축적하여
                         철저한 분양사의 교육과 정예화된 조직,<br>
                         과학적인 시장분석 기법을 통하여 성공적인 업무를 진행하고 있습니다.
@@ -163,7 +205,9 @@
             </div>
         </div>
     </footer>
+
     <button
+        onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
         class="fixed bottom-8 right-8 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-slate-400 hover:text-slate-600 transition-colors z-50">
         <span class="material-symbols-outlined">expand_less</span>
     </button>
