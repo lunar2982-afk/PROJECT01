@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html class="dark" lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Contact | 국토포레스</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2b90d",
+                        "luxia-gold": "#b08d57",
+                        "background-light": "#ffffff",
+                        "background-dark": "#1a1a1a",
+                        "footer-dark": "#2b2b2b"
+                    },
+                    fontFamily: {
+                        "sans": ["Noto Sans KR", "Inter", "sans-serif"],
+                        "display": ["Inter", "Noto Sans KR", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply font-sans antialiased text-slate-800 bg-background-dark;
+            }
+        }
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.6) 100%);
+        }
+    </style>
+</head>
+
+<body class="bg-background-dark">
+    <!-- Global Header -->
+    <header class="fixed top-0 w-full z-50 bg-background-dark/95 border-b border-primary/10 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <a href="index.html" class="block">
+                    <img src="img/logo.png" alt="KUKTO FORES" class="w-[10vw] min-w-[100px] max-w-[150px] h-auto object-contain">
+                </a>
+            </div>
+            <nav class="hidden md:flex items-center space-x-10 text-sm font-medium tracking-widest uppercase">
+                <a class="text-slate-400 hover:text-primary transition-colors" href="company.html">회사소개</a>
+                <a class="text-slate-400 hover:text-primary transition-colors" href="business.html">사업영역</a>
+                <a class="text-slate-400 hover:text-primary transition-colors" href="proposal.html">운영제안</a>
+                <a class="text-slate-400 hover:text-primary transition-colors" href="reference.html">레퍼런스</a>
+                <a class="px-5 py-2 border border-primary text-primary hover:bg-primary hover:text-background-dark transition-all rounded-sm"
+                    href="contact.html">Contact</a>
+            </nav>
+            <button class="md:hidden text-primary">
+                <span class="material-icons">menu</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section class="relative h-[40vh] flex items-center justify-center overflow-hidden">
+            <img alt="Contact Background" class="absolute inset-0 w-full h-full object-cover opacity-50" src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?auto=format&fit=crop&q=80&w=2000" />
+            <div class="absolute inset-0 hero-overlay"></div>
+            <div class="relative z-10 text-center">
+                <h1 class="text-5xl md:text-7xl font-bold text-white tracking-widest uppercase">Contact</h1>
+                <p class="text-primary mt-6 text-lg tracking-[0.3em] font-medium uppercase">Inquiry & Partnership</p>
+            </div>
+        </section>
+
+        <!-- Form Section -->
+        <section class="py-24 bg-background-dark">
+            <div class="max-w-4xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">제휴 및 사업 문의</h2>
+                    <p class="text-slate-400 font-light">국토포레스와 함께 성공적인 비즈니스를 시작하세요.</p>
+                    <div class="w-16 h-px bg-primary/50 mx-auto mt-8"></div>
+                </div>
+
+                <form id="contactForm" class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-10">
+                    <div class="space-y-2">
+                        <label class="text-[10px] uppercase tracking-[0.2em] text-white/40 font-semibold">성함 / 업체명</label>
+                        <input type="text" id="name" required class="w-full bg-transparent border-b border-white/10 py-3 focus:border-primary focus:outline-none transition-colors text-white placeholder:text-white/10" placeholder="Your Name or Company">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-[10px] uppercase tracking-[0.2em] text-white/40 font-semibold">연락처</label>
+                        <input type="tel" id="phone" required class="w-full bg-transparent border-b border-white/10 py-3 focus:border-primary focus:outline-none transition-colors text-white placeholder:text-white/10" placeholder="010-0000-0000">
+                    </div>
+                    <div class="space-y-2 md:col-span-2">
+                        <label class="text-[10px] uppercase tracking-[0.2em] text-white/40 font-semibold">이메일 주소</label>
+                        <input type="email" id="email" required class="w-full bg-transparent border-b border-white/10 py-3 focus:border-primary focus:outline-none transition-colors text-white placeholder:text-white/10" placeholder="email@address.com">
+                    </div>
+                    <div class="space-y-2 md:col-span-2">
+                        <label class="text-[10px] uppercase tracking-[0.2em] text-white/40 font-semibold">문의 내용</label>
+                        <textarea id="message" rows="6" required class="w-full bg-transparent border-b border-white/10 py-3 focus:border-primary focus:outline-none transition-colors text-white placeholder:text-white/10 resize-none" placeholder="Describe your project or inquiry"></textarea>
+                    </div>
+                    <div class="md:col-span-2 flex flex-col items-center pt-8">
+                        <button type="submit" id="submitBtn" class="group relative px-16 py-4 bg-primary text-background-dark font-bold tracking-[0.2em] text-xs uppercase transition-all duration-300 hover:bg-white overflow-hidden">
+                            <span class="relative z-10" id="btnText">Submit Inquiry</span>
+                        </button>
+                        <p id="formStatus" class="mt-4 text-sm font-light text-slate-400 hidden"></p>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-white/5 py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center space-x-2 mb-6">
+                        <span class="text-lg font-bold tracking-widest uppercase text-white">KUKTO FORES</span>
+                    </div>
+                    <p class="text-slate-400 max-w-sm leading-relaxed text-sm">
+                        고객의 기대를 충분히 만족시킬 수 있는 풍부한 분양경험을 축적하여
+                        철저한 분양사의 교육과 정예화된 조직,<br>
+                        과학적인 시장분석 기법을 통하여 성공적인 업무를 진행하고 있습니다.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white text-xs uppercase tracking-widest font-bold mb-6">Contact</h4>
+                    <p class="text-slate-500 text-sm mb-2">경기도 수원시</p>
+                    <p class="text-slate-500 text-sm mb-2">영통구 중부대로462번길</p>
+                    <p class="text-slate-500 text-sm">41-4</p>
+                </div>
+                <div>
+                    <h4 class="text-white text-xs uppercase tracking-widest font-bold mb-6">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a class="text-slate-500 hover:text-primary transition-colors" href="#">TEL. <br>031-205-5444</a>
+                        <a class="text-slate-500 hover:text-primary transition-colors" href="#">FAX. <br>031-283-3444</a>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-600 text-[10px] uppercase tracking-widest">© KUKTO FORES ALL RIGHTS RESERVED.</p>
+                <div class="flex space-x-8">
+                    <a class="text-slate-600 text-[10px] uppercase tracking-widest hover:text-white transition-colors"
+                        href="#">Privacy Policy</a>
+                    <a class="text-slate-600 text-[10px] uppercase tracking-widest hover:text-white transition-colors"
+                        href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Firebase SDK (Firestore) -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+        // TODO: Replace with your project's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_PROJECT_ID.appspot.com",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        const contactForm = document.getElementById('contactForm');
+        const formStatus = document.getElementById('formStatus');
+        const submitBtn = document.getElementById('submitBtn');
+        const btnText = document.getElementById('btnText');
+
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // UI 상태 변경 (로딩 중)
+            submitBtn.disabled = true;
+            btnText.textContent = "Sending...";
+            formStatus.classList.remove('hidden', 'text-red-500', 'text-green-500');
+            formStatus.textContent = "문의를 전송 중입니다...";
+
+            const formData = {
+                name: document.getElementById('name').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value,
+                message: document.getElementById('message').value,
+                createdAt: serverTimestamp()
+            };
+
+            try {
+                // Firestore의 'inquiries' 컬렉션에 데이터 저장
+                await addDoc(collection(db, "inquiries"), formData);
+                
+                // 성공 처리
+                formStatus.textContent = "문의가 성공적으로 전달되었습니다. 곧 연락드리겠습니다.";
+                formStatus.classList.add('text-green-500');
+                contactForm.reset();
+            } catch (error) {
+                console.error("Error adding document: ", error);
+                formStatus.textContent = "오류가 발생했습니다. 다시 시도해 주세요.";
+                formStatus.classList.add('text-red-500');
+            } finally {
+                submitBtn.disabled = false;
+                btnText.textContent = "Submit Inquiry";
+            }
+        });
+    </script>
+</body>
+
+</html>
