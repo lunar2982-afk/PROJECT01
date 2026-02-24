@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html class="dark" lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>사업영역 | 국토포레스</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2b90d",
+                        "luxia-gold": "#b08d57",
+                        "background-light": "#ffffff",
+                        "background-dark": "#1a1a1a",
+                        "footer-dark": "#2b2b2b"
+                    },
+                    fontFamily: {
+                        "sans": ["Noto Sans KR", "Inter", "sans-serif"],
+                        "display": ["Inter", "Noto Sans KR", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply font-sans antialiased text-slate-800 bg-white;
+            }
+        }
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.5) 100%);
+        }
+        .nav-active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 8px solid white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Global Header -->
+    <header class="fixed top-0 w-full z-50 bg-background-dark/95 border-b border-primary/10 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            
+            <div class="flex items-center space-x-2">
+                <span class="text-xl font-bold tracking-widest uppercase text-white">
+                <a href="index.html" class="block">
+                    <img src="img/logo.png" alt="KUKTO FORES" class="w-[10vw] min-w-[100px] max-w-[150px] h-auto object-contain">
+                </a>
+            </div>
+            <nav class="hidden md:flex items-center space-x-10 text-sm font-medium tracking-widest uppercase">
+                <a class="text-slate-400 hover:text-primary transition-colors" href="company.html">회사소개</a>
+                <a class="text-primary border-b border-primary pb-1" href="business.html">사업영역</a>
+                <a class="text-slate-400 hover:text-primary transition-colors" href="proposal.html">운영제안</a>
+                <a class="text-slate-400 hover:text-primary transition-colors" href="reference.html">레퍼런스</a>
+                <a class="px-5 py-2 border border-primary text-primary hover:bg-primary hover:text-background-dark transition-all rounded-sm"
+                    href="#">Contact</a>
+            </nav>
+            <button class="md:hidden text-primary">
+                <span class="material-icons">menu</span>
+            </button>
+        </div>
+    </header>
+    <main>
+        <section class="relative h-[600px] flex items-center justify-center overflow-hidden">
+            <img alt="Architectural Skyline" class="absolute inset-0 w-full h-full object-cover" src="img/00-4.jpg" />
+            <div class="absolute inset-0 hero-overlay"></div>
+            <div class="relative z-10 text-center">
+                <h1 class="text-6xl md:text-8xl font-bold text-white tracking-widest">사업영역</h1>
+            </div>
+        </section>
+        <nav class="bg-luxia-gold/90 backdrop-blur-sm border-b border-white/10 sticky top-0 z-40">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="flex justify-between items-center h-16">
+                    <button onclick="showTab('sales')" id="btn-sales" class="tab-btn relative px-4 md:px-6 text-white font-medium text-sm nav-active">분양대행</button>
+                    <button onclick="showTab('development')" id="btn-development" class="tab-btn px-4 md:px-6 text-white/70 hover:text-white transition-colors font-medium text-sm">부동산개발</button>
+                    <button onclick="showTab('interior')" id="btn-interior" class="tab-btn px-4 md:px-6 text-white/70 hover:text-white transition-colors font-medium text-sm">부동산 전문 인테리어</button>
+                    <button onclick="showTab('community')" id="btn-community" class="tab-btn px-4 md:px-6 text-white/70 hover:text-white transition-colors font-medium text-sm">커뮤니티 운영관리</button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Tab: 분양대행 -->
+        <section id="sales" class="tab-content py-24 max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                <div class="aspect-[4/3] bg-[#f5f5f5] overflow-hidden">
+                    <img alt="Sales Agency" class="w-full h-full object-cover shadow-2xl transition-transform duration-700 hover:scale-105"
+                        src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=1000" />
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-luxia-gold font-bold tracking-widest text-sm mb-8">REAL ESTATE SALES AGENCY</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-slate-900 leading-[1.3] mb-12">
+                        최적화된 마케팅으로<br />
+                        완벽한 분양 성공을<br />
+                        실현합니다.
+                    </h2>
+                    <div class="space-y-6 text-slate-600 leading-relaxed font-light">
+                        <p>
+                            국토포레스의 분양대행 서비스는 철저한 시장 분석과 타겟 설정을 통해 프로젝트의 가치를 극대화합니다. 
+                            수년간 쌓아온 데이터와 노하우를 바탕으로 각 현장에 최적화된 맞춤형 분양 전략을 수립합니다.
+                        </p>
+                        <ul class="space-y-4 mt-8">
+                            <li class="flex items-start">
+                                <span class="text-luxia-gold mr-3">■</span>
+                                <div><strong class="text-slate-900 block mb-1">정밀한 시장 분석</strong> 주변 시세 및 수요 예측을 통한 합리적인 분양가 산정</div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-luxia-gold mr-3">■</span>
+                                <div><strong class="text-slate-900 block mb-1">혁신적 마케팅 솔루션</strong> 온/오프라인을 망라하는 다각도의 홍보 전략 실행</div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-luxia-gold mr-3">■</span>
+                                <div><strong class="text-slate-900 block mb-1">정예화된 조직 운영</strong> 전문 교육을 이수한 베테랑 인력의 체계적인 관리</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab: 부동산개발 -->
+        <section id="development" class="tab-content hidden py-24 max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                <div class="flex flex-col order-2 lg:order-1">
+                    <span class="text-luxia-gold font-bold tracking-widest text-sm mb-8">REAL ESTATE DEVELOPMENT</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-slate-900 leading-[1.3] mb-12">
+                        토지의 잠재 가치를<br />
+                        미래의 주거 문화로<br />
+                        재창조합니다.
+                    </h2>
+                    <div class="space-y-6 text-slate-600 leading-relaxed font-light">
+                        <p>
+                            단순한 건축을 넘어 도시의 미래를 설계합니다. 국토포레스는 토지 매입부터 기획, 설계, 시공 관리까지 
+                            개발 사업의 전 과정을 아우르는 종합 솔루션을 제공하여 안정적이고 창의적인 개발 모델을 제시합니다.
+                        </p>
+                        <div class="grid grid-cols-2 gap-6 mt-12">
+                            <div class="border-l-2 border-luxia-gold pl-6 py-2">
+                                <h4 class="text-slate-900 font-bold mb-2">사업지 발굴</h4>
+                                <p class="text-sm">입지 분석 및 타당성 검토</p>
+                            </div>
+                            <div class="border-l-2 border-luxia-gold pl-6 py-2">
+                                <h4 class="text-slate-900 font-bold mb-2">기획 및 설계</h4>
+                                <p class="text-sm">최적의 공간 구성 제안</p>
+                            </div>
+                            <div class="border-l-2 border-luxia-gold pl-6 py-2">
+                                <h4 class="text-slate-900 font-bold mb-2">금융 솔루션</h4>
+                                <p class="text-sm">PF 조달 및 자금 관리</p>
+                            </div>
+                            <div class="border-l-2 border-luxia-gold pl-6 py-2">
+                                <h4 class="text-slate-900 font-bold mb-2">리스크 관리</h4>
+                                <p class="text-sm">법규 검토 및 공정 관리</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="aspect-[4/3] bg-[#f5f5f5] overflow-hidden order-1 lg:order-2">
+                    <img alt="Real Estate Development" class="w-full h-full object-cover shadow-2xl transition-transform duration-700 hover:scale-105"
+                        src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1000" />
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab: 부동산 전문 인테리어 -->
+        <section id="interior" class="tab-content hidden py-24 max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                <div class="aspect-[4/3] bg-[#f5f5f5] overflow-hidden">
+                    <img alt="Real Estate Interior" class="w-full h-full object-cover shadow-2xl transition-transform duration-700 hover:scale-105"
+                        src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=1000" />
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-luxia-gold font-bold tracking-widest text-sm mb-8">INTERIOR DESIGN</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-slate-900 leading-[1.3] mb-12">
+                        공간의 품격이<br />
+                        부동산의 가치를<br />
+                        결정짓습니다.
+                    </h2>
+                    <div class="space-y-6 text-slate-600 leading-relaxed font-light">
+                        <p>
+                            부동산 트렌드를 읽는 안목으로 심미성과 기능성을 동시에 충족하는 인테리어를 제안합니다. 
+                            입주자의 라이프스타일을 배려한 섬세한 디자인과 엄선된 자재를 사용하여 머무는 것만으로도 자부심이 되는 공간을 만듭니다.
+                        </p>
+                        <div class="mt-8 space-y-4">
+                            <div class="bg-slate-50 p-6 rounded-sm">
+                                <span class="text-luxia-gold font-bold block mb-1">01. 맞춤형 공간 기획</span>
+                                <p class="text-sm">사용자의 니즈를 반영한 최적의 레이아웃 설계</p>
+                            </div>
+                            <div class="bg-slate-50 p-6 rounded-sm">
+                                <span class="text-luxia-gold font-bold block mb-1">02. 프리미엄 마감재</span>
+                                <p class="text-sm">내구성과 디자인을 겸비한 고품격 자재 엄선</p>
+                            </div>
+                            <div class="bg-slate-50 p-6 rounded-sm">
+                                <span class="text-luxia-gold font-bold block mb-1">03. 책임 시공 및 사후관리</span>
+                                <p class="text-sm">철저한 공정 준수와 완벽한 A/S 보장</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab: 커뮤니티 운영관리 -->
+        <section id="community" class="tab-content hidden py-24 max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                <div class="flex flex-col order-2 lg:order-1">
+                    <span class="text-luxia-gold font-bold tracking-widest text-sm mb-8">COMMUNITY MANAGEMENT</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-slate-900 leading-[1.3] mb-12">
+                        지속 가능한<br />
+                        커뮤니티로 단지의<br />
+                        생명력을 더합니다.
+                    </h2>
+                    <div class="space-y-6 text-slate-600 leading-relaxed font-light">
+                        <p>
+                            입주민의 만족도를 극대화하는 커뮤니티 서비스를 통해 주거 단지의 브랜드 가치를 높입니다. 
+                            단순한 시설 관리를 넘어, 입주민들이 소통하고 즐길 수 있는 문화 공간을 운영하여 하이엔드 주거 문화를 선도합니다.
+                        </p>
+                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+                            <li class="flex items-center space-x-3 p-4 border border-slate-100">
+                                <span class="material-symbols-outlined text-luxia-gold">fitness_center</span>
+                                <span class="text-slate-800 font-medium">피트니스/GX 센터 운영</span>
+                            </li>
+                            <li class="flex items-center space-x-3 p-4 border border-slate-100">
+                                <span class="material-symbols-outlined text-luxia-gold">coffee</span>
+                                <span class="text-slate-800 font-medium">입주민 전용 라운지/카페</span>
+                            </li>
+                            <li class="flex items-center space-x-3 p-4 border border-slate-100">
+                                <span class="material-symbols-outlined text-luxia-gold">cleaning_services</span>
+                                <span class="text-slate-800 font-medium">컨시어지 및 청소 서비스</span>
+                            </li>
+                            <li class="flex items-center space-x-3 p-4 border border-slate-100">
+                                <span class="material-symbols-outlined text-luxia-gold">event_available</span>
+                                <span class="text-slate-800 font-medium">문화 행사 및 프로그램 기획</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="aspect-[4/3] bg-[#f5f5f5] overflow-hidden order-1 lg:order-2">
+                    <img alt="Community Management" class="w-full h-full object-cover shadow-2xl transition-transform duration-700 hover:scale-105"
+                        src="https://images.unsplash.com/photo-1577412647305-991150c7d163?auto=format&fit=crop&q=80&w=1000" />
+                </div>
+            </div>
+        </section>
+
+        <script>
+            function showTab(tabId) {
+                // Hide all tab contents
+                const contents = document.querySelectorAll('.tab-content');
+                contents.forEach(content => {
+                    content.classList.add('hidden');
+                });
+
+                // Show the selected tab content
+                document.getElementById(tabId).classList.remove('hidden');
+
+                // Update tab buttons styling
+                const buttons = document.querySelectorAll('.tab-btn');
+                buttons.forEach(btn => {
+                    btn.classList.remove('text-white', 'nav-active');
+                    btn.classList.add('text-white/70');
+                });
+
+                const activeBtn = document.getElementById('btn-' + tabId);
+                activeBtn.classList.remove('text-white/70');
+                activeBtn.classList.add('text-white', 'nav-active');
+                
+                // Optional: Scroll to top of the content area if needed
+                // window.scrollTo({ top: document.querySelector('nav.sticky').offsetTop, behavior: 'smooth' });
+            }
+        </script>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-black border-t border-white/5 py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center space-x-2 mb-6">
+                        <span class="text-lg font-bold tracking-widest uppercase text-white">KUKTO FORES</span>
+                    </div>
+                    <p class="text-slate-510 max-w-sm leading-relaxed text-sm">
+                        고객의 기대를 충분히 만족시킬 수 있는 풍부한 분양경험을 축적하여
+                        철저한 분양사의 교육과 정예화된 조직,<br>
+                        과학적인 시장분석 기법을 통하여 성공적인 업무를 진행하고 있습니다.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white text-xs uppercase tracking-widest font-bold mb-6">Contact</h4>
+                    <p class="text-slate-500 text-sm mb-2">경기도 수원시</p>
+                    <p class="text-slate-500 text-sm mb-2">영통구 중부대로462번길</p>
+                    <p class="text-slate-500 text-sm">41-4</p>
+                </div>
+                <div>
+                    <h4 class="text-white text-xs uppercase tracking-widest font-bold mb-6">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a class="text-slate-500 hover:text-primary transition-colors" href="#">TEL. <br>031-205-5444</a>
+                        <a class="text-slate-500 hover:text-primary transition-colors" href="#">FAX. <br>031-283-3444</a>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-600 text-[10px] uppercase tracking-widest">© KUKTO FORES ALL RIGHTS RESERVED.</p>
+                <div class="flex space-x-8">
+                    <a class="text-slate-600 text-[10px] uppercase tracking-widest hover:text-white transition-colors"
+                        href="#">Privacy Policy</a>
+                    <a class="text-slate-600 text-[10px] uppercase tracking-widest hover:text-white transition-colors"
+                        href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <button
+        class="fixed bottom-8 right-8 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-slate-400 hover:text-slate-600 transition-colors z-50">
+        <span class="material-symbols-outlined">expand_less</span>
+    </button>
+
+</body>
+
+</html>
