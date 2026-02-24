@@ -98,13 +98,16 @@
 <body
     class="bg-background-light dark:bg-background-dark font-display text-white selection:bg-primary selection:text-background-dark">
     <!-- Cinematic Hero Section -->
-    <main class="relative h-screen w-full overflow-hidden">
-        <!-- Background Image -->
+    <main class="relative h-screen w-full overflow-hidden bg-background-dark">
+        <!-- Background Video/Image -->
         <div class="absolute inset-0 z-0">
-            <img alt="Modern urban cityscape at dusk"
-                class="w-full h-full object-cover animate-ken-burns-hero"
-                data-alt="Modern urban cityscape at dusk with warm lights"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFuB31BGWMHR0lp351JN1LEz7lm7FDXiTWYTsVDqJ-_u1A02me9acX68rDEz6naX5n045_-smdkmeDPkepnBZLOrBy4Awho39EMR6_GhsXmmH3p-C9MzgzEppKlPsfk2fGEU5oktH5wYNzyFmhfUzsMQRjX-8zmQKoW5N9XNusqxLMWpg5GmO-G1CxsrktpK9MOaYGRU8nYk8vqdT_0ArnXiI1sVVewv-X6z_pWIVHWRrfNaSc6vD2b-sLn_xWYY4fA1O27wL20GGF" />
+            <video autoplay muted loop playsinline 
+                poster="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2560&auto=format&fit=crop" 
+                class="w-full h-full object-cover">
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-city-traffic-at-night-seen-from-above-3450-large.mp4" type="video/mp4">
+            </video>
+            <!-- Fallback for slow loading or video failure -->
+            <div class="absolute inset-0 bg-cover bg-center -z-10" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2560&auto=format&fit=crop');"></div>
             <div class="absolute inset-0 hero-overlay z-10"></div>
             <div class="light-leak-overlay"></div>
         </div>
