@@ -53,6 +53,32 @@
             border-right: 8px solid transparent;
             border-bottom: 8px solid white;
         }
+
+        /* Hero Image Animations */
+        @keyframes hero-visual-dynamic {
+            0% {
+                filter: brightness(0.3) blur(10px);
+                transform: scale(1.15);
+                opacity: 0;
+            }
+            100% {
+                filter: brightness(1) blur(0px);
+                transform: scale(1.05);
+                opacity: 1;
+            }
+        }
+
+        @keyframes ken-burns-subtle {
+            0% { transform: scale(1.05) translate(0, 0); }
+            50% { transform: scale(1.1) translate(-1%, -0.5%); }
+            100% { transform: scale(1.05) translate(0, 0); }
+        }
+
+        .animate-hero-dynamic {
+            animation: 
+                hero-visual-dynamic 3s ease-out forwards,
+                ken-burns-subtle 20s ease-in-out infinite 3s;
+        }
     </style>
 </head>
 
@@ -82,7 +108,7 @@
     </header>
     <main>
         <section class="relative h-[600px] flex items-center justify-center overflow-hidden">
-            <img alt="Architectural Skyline" class="absolute inset-0 w-full h-full object-cover" src="img/00-4.jpg" />
+            <img alt="Professional Business Space" class="absolute inset-0 w-full h-full object-cover animate-hero-dynamic" src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2000" />
             <div class="absolute inset-0 hero-overlay"></div>
             <div class="relative z-10 text-center">
                 <h1 class="text-6xl md:text-8xl font-bold text-white tracking-widest">사업영역</h1>
