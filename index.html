@@ -44,6 +44,36 @@
             background: linear-gradient(to bottom, rgba(34, 30, 16, 0.4) 0%, rgba(34, 30, 16, 0.2) 50%, rgba(34, 30, 16, 0.8) 100%);
         }
 
+        /* Cinematic Ken Burns Effect */
+        @keyframes ken-burns-hero {
+            0% { transform: scale(1) translate(0, 0); }
+            50% { transform: scale(1.15) translate(-1%, -1%); }
+            100% { transform: scale(1) translate(0, 0); }
+        }
+
+        .animate-ken-burns-hero {
+            animation: ken-burns-hero 40s ease-in-out infinite;
+        }
+
+        /* Subtle Light Leak Effect */
+        @keyframes light-leak {
+            0% { opacity: 0.2; transform: translateX(-50%) skewX(-15deg); }
+            50% { opacity: 0.5; transform: translateX(50%) skewX(-15deg); }
+            100% { opacity: 0.2; transform: translateX(-50%) skewX(-15deg); }
+        }
+
+        .light-leak-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(to right, transparent, rgba(242, 185, 13, 0.05), transparent);
+            z-index: 15;
+            pointer-events: none;
+            animation: light-leak 15s ease-in-out infinite;
+        }
+
         .letter-spacing-widest {
             letter-spacing: 0.25em;
         }
@@ -72,10 +102,11 @@
         <!-- Background Image -->
         <div class="absolute inset-0 z-0">
             <img alt="Modern urban cityscape at dusk"
-                class="w-full h-full object-cover scale-105 transition-transform duration-[10000ms]"
+                class="w-full h-full object-cover animate-ken-burns-hero"
                 data-alt="Modern urban cityscape at dusk with warm lights"
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFuB31BGWMHR0lp351JN1LEz7lm7FDXiTWYTsVDqJ-_u1A02me9acX68rDEz6naX5n045_-smdkmeDPkepnBZLOrBy4Awho39EMR6_GhsXmmH3p-C9MzgzEppKlPsfk2fGEU5oktH5wYNzyFmhfUzsMQRjX-8zmQKoW5N9XNusqxLMWpg5GmO-G1CxsrktpK9MOaYGRU8nYk8vqdT_0ArnXiI1sVVewv-X6z_pWIVHWRrfNaSc6vD2b-sLn_xWYY4fA1O27wL20GGF" />
             <div class="absolute inset-0 hero-overlay z-10"></div>
+            <div class="light-leak-overlay"></div>
         </div>
         <!-- Top Navigation -->
          <!-- Global Header -->
@@ -117,6 +148,69 @@
             </p>
         </div>
     </main>
+
+    <!-- Performance Metrics Section -->
+    <section class="bg-background-dark py-32 border-b border-white/5 relative">
+        <div class="max-w-7xl mx-auto px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-12">
+                <!-- Metric 1: History -->
+                <div class="relative flex flex-col items-center text-center group">
+                    <div class="mb-8 relative">
+                        <div class="w-24 h-24 border border-primary/20 rounded-full flex items-center justify-center group-hover:border-primary transition-all duration-700">
+                            <span class="material-symbols-outlined text-primary text-4xl group-hover:scale-110 transition-transform duration-500">history</span>
+                        </div>
+                        <div class="absolute -top-1 -right-1 w-3 h-3 bg-primary rounded-full animate-pulse"></div>
+                    </div>
+                    <div class="space-y-4">
+                        <h4 class="text-5xl md:text-6xl font-serif font-light text-white tracking-tighter">26<span class="text-xl ml-1 font-sans text-primary/80">Years</span></h4>
+                        <div class="flex flex-col items-center">
+                            <span class="text-primary text-[10px] tracking-[0.4em] font-semibold uppercase opacity-60 mb-4">Established 1998</span>
+                            <h3 class="text-xl font-medium text-white/90 mb-2">26년의 역사</h3>
+                            <p class="text-white/40 text-sm font-light leading-relaxed">급변하는 부동산 시장에서<br/>지켜온 변함없는 신뢰와 노하우</p>
+                        </div>
+                    </div>
+                    <!-- Connector line for desktop -->
+                    <div class="hidden md:block absolute top-12 -right-6 w-12 h-px bg-gradient-to-r from-primary/20 to-transparent"></div>
+                </div>
+
+                <!-- Metric 2: Performance -->
+                <div class="relative flex flex-col items-center text-center group">
+                    <div class="mb-8 relative">
+                        <div class="w-24 h-24 border border-primary/20 rounded-full flex items-center justify-center group-hover:border-primary transition-all duration-700">
+                            <span class="material-symbols-outlined text-primary text-4xl group-hover:scale-110 transition-transform duration-500">analytics</span>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <h4 class="text-5xl md:text-6xl font-serif font-light text-white tracking-tighter">500<span class="text-xl ml-1 font-sans text-primary/80">+</span></h4>
+                        <div class="flex flex-col items-center">
+                            <span class="text-primary text-[10px] tracking-[0.4em] font-semibold uppercase opacity-60 mb-4">Total Success Case</span>
+                            <h3 class="text-xl font-medium text-white/90 mb-2">압도적 실적</h3>
+                            <p class="text-white/40 text-sm font-light leading-relaxed">전국 500여 개 이상의 프로젝트를<br/>성공으로 이끈 분양 대행 실적</p>
+                        </div>
+                    </div>
+                    <!-- Connector line for desktop -->
+                    <div class="hidden md:block absolute top-12 -right-6 w-12 h-px bg-gradient-to-r from-primary/20 to-transparent"></div>
+                </div>
+
+                <!-- Metric 3: Satisfaction -->
+                <div class="relative flex flex-col items-center text-center group">
+                    <div class="mb-8 relative">
+                        <div class="w-24 h-24 border border-primary/20 rounded-full flex items-center justify-center group-hover:border-primary transition-all duration-700">
+                            <span class="material-symbols-outlined text-primary text-4xl group-hover:scale-110 transition-transform duration-500">verified</span>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <h4 class="text-5xl md:text-6xl font-serif font-light text-white tracking-tighter">98<span class="text-xl ml-1 font-sans text-primary/80">%</span></h4>
+                        <div class="flex flex-col items-center">
+                            <span class="text-primary text-[10px] tracking-[0.4em] font-semibold uppercase opacity-60 mb-4">Customer Loyalty</span>
+                            <h3 class="text-xl font-medium text-white/90 mb-2">높은 만족도</h3>
+                            <p class="text-white/40 text-sm font-light leading-relaxed">파트너사가 다시 찾는<br/>체계적인 운영 관리와 서비스</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Rolling Image Gallery Section -->
     <section class="bg-background-dark py-20 overflow-hidden border-b border-white/5">
@@ -173,10 +267,9 @@
         class="relative z-30 bg-background-dark px-8 py-32 grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-white/5">
         <div class="space-y-6 group">
             <div class="aspect-[4/5] overflow-hidden rounded-lg">
-                <img alt="Corporate architectural design"
+                <img alt="Luxury corporate architecture"
                     class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
-                    data-alt="Modern geometric building architecture"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDK3gnKJ_L_EStZqSIpPY9ZhYjUFR2ZlgQ9151ynHcBEHV6qqMvNcKRItg0Ap6kBkmot6rEHglktjOmBQsODN8Ha0q1G-0-1C80FZypSUNt1y1lpKJUs1of68sgOmYFSs2QZfaBglNqHCRFMlcWGUZhdWOmDQYAKN1_Cw41KGyCdkHNfwLuUL-PSrTtODhcM9ecRBRlndkKqVX83w-DuO3iVX6i817hGJJEDabXckFqVnQMjAyAf9uJBSqlOllEjI3rehohQ3S0oRb3" />
+                    src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop" />
             </div>
             <h3 class="text-primary text-xs tracking-[0.3em] font-semibold uppercase">Business</h3>
             <h2 class="text-3xl">사업영역</h2>
@@ -383,8 +476,8 @@
                     <div class="flex items-center space-x-2 mb-6">
                         <span class="text-lg font-bold tracking-widest uppercase text-white">KUKTO FORES</span>
                     </div>
-                    <p class="text-slate-510 max-w-sm leading-relaxed text-sm">
-                        고객의 기대를 충분히 만족시킬 수 있는 풍부한 분양경험을 축적하여
+                    <p class="text-slate-500 max-w-md leading-relaxed text-sm">
+                        고객의 기대를 충분히 만족시킬 수 있는 풍부한 분양경험을 축적하여<br>
                         철저한 분양사의 교육과 정예화된 조직,<br>
                         과학적인 시장분석 기법을 통하여 성공적인 업무를 진행하고 있습니다.
                     </p>
