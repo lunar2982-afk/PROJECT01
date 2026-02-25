@@ -100,10 +100,10 @@
     <!-- Cinematic Hero Section -->
     <main class="relative h-screen w-full overflow-hidden bg-[#1a1a1a]">
         <!-- Background Layer -->
-        <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 z-0 bg-cover bg-center" style="background-image: url('main_video_bg.jpg');">
             <!-- 1. Video (Top layer of background) -->
-            <video autoplay muted loop playsinline 
-                class="absolute inset-0 w-full h-full object-cover z-0"
+            <video id="hero-video" autoplay muted playsinline 
+                class="absolute inset-0 w-full h-full object-cover z-0 transition-opacity duration-1000"
                 style="object-position: center;">
                 <source src="main_video.mp4" type="video/mp4">
             </video>
@@ -441,6 +441,14 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Video end transition
+            const heroVideo = document.getElementById('hero-video');
+            if (heroVideo) {
+                heroVideo.onended = function() {
+                    heroVideo.classList.add('opacity-0');
+                };
+            }
+
             var swiper = new Swiper(".mySwiper", {
                 slidesPerView: 1.2,
                 spaceBetween: 20,
