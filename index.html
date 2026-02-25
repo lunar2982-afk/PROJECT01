@@ -98,56 +98,53 @@
 <body
     class="bg-background-light dark:bg-background-dark font-display text-white selection:bg-primary selection:text-background-dark">
     <!-- Cinematic Hero Section -->
-    <main class="relative h-screen w-full overflow-hidden bg-background-dark">
-        <!-- Background Video/Image -->
+    <main class="relative h-screen w-full overflow-hidden bg-[#1a1a1a]">
+        <!-- Background Layer -->
         <div class="absolute inset-0 z-0">
+            <!-- 1. Video (Top layer of background) -->
             <video autoplay muted loop playsinline 
-                poster="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2560&auto=format&fit=crop" 
-                class="w-full h-full object-cover">
-                <source src="https://assets.mixkit.co/videos/preview/mixkit-city-traffic-at-night-seen-from-above-3450-large.mp4" type="video/mp4">
+                class="absolute inset-0 w-full h-full object-cover z-0"
+                style="object-position: center;">
+                <source src="main_video.mp4" type="video/mp4">
             </video>
-            <!-- Fallback for slow loading or video failure -->
-            <div class="absolute inset-0 bg-cover bg-center -z-10" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2560&auto=format&fit=crop');"></div>
-            <div class="absolute inset-0 hero-overlay z-10"></div>
-            <div class="light-leak-overlay"></div>
-        </div>
-        <!-- Top Navigation -->
-         <!-- Global Header -->
-    <header class="fixed top-0 w-full z-50 bg-background-dark/95 border-b border-primary/10 backdrop-blur-md">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             
-            <div class="flex items-center space-x-2">
-                <span class="text-xl font-bold tracking-widest uppercase text-white">
-                <a href="index.html" class="block">
-                    <img src="img/logo.png" alt="KUKTO FORES" class="w-[10vw] min-w-[100px] max-w-[150px] h-auto object-contain">
-                </a>
-            </div>
-            <nav class="hidden md:flex items-center space-x-10 text-sm font-medium tracking-widest uppercase">
-                <a class="text-slate-400 hover:text-primary transition-colors" href="company.html">회사소개</a>
-                <a class="text-slate-400 hover:text-primary transition-colors" href="business.html">사업영역</a>
-                <a class="text-slate-400 hover:text-primary transition-colors" href="proposal.html">운영제안</a>
-                <a class="text-slate-400 hover:text-primary transition-colors" href="reference.html">레퍼런스</a>
-                <a class="px-5 py-2 border border-primary text-primary hover:bg-primary hover:text-background-dark transition-all rounded-sm"
-                    href="contact.html">Contact</a>
-            </nav>
-            <button class="md:hidden text-primary">
-                <span class="material-icons">menu</span>
-            </button>
+            <!-- 2. Overlays (Bottom layers of background) -->
+            <div class="absolute inset-0 hero-overlay z-10 pointer-events-none"></div>
+            <div class="light-leak-overlay pointer-events-none"></div>
         </div>
-    </header>
+        
+        <!-- Global Header -->
+        <header class="fixed top-0 w-full z-50 bg-background-dark/95 border-b border-primary/10 backdrop-blur-md">
+            <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <a href="index.html" class="block">
+                        <img src="img/logo.png" alt="KUKTO FORES" class="w-[10vw] min-w-[100px] max-w-[150px] h-auto object-contain">
+                    </a>
+                </div>
+                <nav class="hidden md:flex items-center space-x-10 text-sm font-medium tracking-widest uppercase">
+                    <a class="text-slate-400 hover:text-primary transition-colors" href="company.html">회사소개</a>
+                    <a class="text-slate-400 hover:text-primary transition-colors" href="business.html">사업영역</a>
+                    <a class="text-slate-400 hover:text-primary transition-colors" href="proposal.html">운영제안</a>
+                    <a class="text-slate-400 hover:text-primary transition-colors" href="reference.html">레퍼런스</a>
+                    <a class="px-5 py-2 border border-primary text-primary hover:bg-primary hover:text-background-dark transition-all rounded-sm"
+                        href="contact.html">Contact</a>
+                </nav>
+                <button class="md:hidden text-primary">
+                    <span class="material-icons">menu</span>
+                </button>
+            </div>
+        </header>
        
         <!-- Center Content -->
         <div class="relative z-20 flex flex-col items-center justify-center h-full text-center px-4">
-            <p class="text-primary text-sm font-medium tracking-[0.5em] mb-6 opacity-90 uppercase">EST. 1998 — Real
-                Estate Excellence</p>
+            <p class="text-primary text-sm font-medium tracking-[0.5em] mb-6 opacity-90 uppercase">EST. 1998 — Real Estate Excellence</p>
             <h1 class="font-serif text-6xl md:text-8xl lg:text-9xl font-light mb-8 max-w-6xl leading-tight">
                 현명한 선택,<br />
                 <span>국토포레스</span>
             </h1>
             <div class="w-24 h-px bg-primary/50 mb-8"></div>
             <p class="max-w-xl text-lg text-white/70 font-light tracking-wide leading-relaxed">
-                Pioneering the future of luxury living and commercial architecture through visionary investment and
-                sustainable growth.
+                Pioneering the future of luxury living and commercial architecture through visionary investment and sustainable growth.
             </p>
         </div>
     </main>
