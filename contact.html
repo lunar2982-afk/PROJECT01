@@ -61,11 +61,31 @@
                 <a class="px-5 py-2 border border-primary text-primary hover:bg-primary hover:text-background-dark transition-all rounded-sm"
                     href="contact.html">Contact</a>
             </nav>
-            <button class="md:hidden text-primary">
-                <span class="material-icons">menu</span>
+            <!-- Mobile Menu Button -->
+            <button id="menu-open" class="md:hidden text-primary p-2">
+                <span class="material-symbols-outlined text-3xl">menu</span>
             </button>
         </div>
     </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-[100] bg-background-dark/98 backdrop-blur-xl transition-all duration-500 translate-x-full opacity-0 invisible">
+        <div class="flex flex-col h-full">
+            <div class="flex justify-end p-8">
+                <button id="menu-close" class="text-primary p-2">
+                    <span class="material-symbols-outlined text-4xl">close</span>
+                </button>
+            </div>
+            <nav class="flex flex-col items-center justify-center flex-grow space-y-12 text-2xl font-light tracking-[0.2em] uppercase">
+                <a class="mobile-nav-link text-white hover:text-primary transition-all" href="company.html">회사소개</a>
+                <a class="mobile-nav-link text-white hover:text-primary transition-all" href="business.html">사업영역</a>
+                <a class="mobile-nav-link text-white hover:text-primary transition-all" href="proposal.html">운영제안</a>
+                <a class="mobile-nav-link text-white hover:text-primary transition-all" href="reference.html">레퍼런스</a>
+                <a class="px-10 py-4 border border-primary text-primary hover:bg-primary hover:text-background-dark transition-all text-lg"
+                    href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </div>
 
     <main class="pt-20">
         <!-- Hero Section -->
@@ -154,6 +174,33 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Menu Logic
+            const menuOpen = document.getElementById('menu-open');
+            const menuClose = document.getElementById('menu-close');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+            function toggleMenu(isOpen) {
+                if (isOpen) {
+                    mobileMenu.classList.remove('translate-x-full', 'opacity-0', 'invisible');
+                    document.body.style.overflow = 'hidden'; // Prevent scrolling
+                } else {
+                    mobileMenu.classList.add('translate-x-full', 'opacity-0', 'invisible');
+                    document.body.style.overflow = '';
+                }
+            }
+
+            if (menuOpen) menuOpen.addEventListener('click', () => toggleMenu(true));
+            if (menuClose) menuClose.addEventListener('click', () => toggleMenu(false));
+            
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => toggleMenu(false));
+            });
+        });
+    </script>
 
     <!-- Firebase SDK (Firestore) -->
     <script type="module">
