@@ -54,12 +54,12 @@
             animation: cinematic-reveal 2.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
         }
 
-        /* Sequential Delays starting from 5s */
-        .delay-5s { animation-delay: 5s; }
-        .delay-5-5s { animation-delay: 5.5s; }
-        .delay-6-5s { animation-delay: 6.5s; }
-        .delay-7-5s { animation-delay: 7.5s; }
-        .delay-8-5s { animation-delay: 8.5s; }
+        /* Sequential Delays starting from 3s */
+        .delay-5s { animation-delay: 3s; }
+        .delay-5-5s { animation-delay: 3.5s; }
+        .delay-6-5s { animation-delay: 4.5s; }
+        .delay-7-5s { animation-delay: 5.5s; }
+        .delay-8-5s { animation-delay: 6.5s; }
 
         /* Cinematic Ken Burns Effect */
         @keyframes ken-burns-hero {
@@ -146,16 +146,36 @@
                     <a class="px-5 py-2 border border-primary text-primary hover:bg-primary hover:text-background-dark transition-all rounded-sm"
                         href="contact.html">Contact</a>
                 </nav>
-                <button class="md:hidden text-primary">
-                    <span class="material-icons">menu</span>
+                <!-- Mobile Menu Button -->
+                <button id="menu-open" class="md:hidden text-primary p-2">
+                    <span class="material-symbols-outlined text-3xl">menu</span>
                 </button>
             </div>
         </header>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="fixed inset-0 z-[100] bg-background-dark/98 backdrop-blur-xl transition-all duration-500 translate-x-full opacity-0 invisible">
+            <div class="flex flex-col h-full">
+                <div class="flex justify-end p-8">
+                    <button id="menu-close" class="text-primary p-2">
+                        <span class="material-symbols-outlined text-4xl">close</span>
+                    </button>
+                </div>
+                <nav class="flex flex-col items-center justify-center flex-grow space-y-12 text-2xl font-light tracking-[0.2em] uppercase">
+                    <a class="mobile-nav-link text-white hover:text-primary transition-all" href="company.html">회사소개</a>
+                    <a class="mobile-nav-link text-white hover:text-primary transition-all" href="business.html">사업영역</a>
+                    <a class="mobile-nav-link text-white hover:text-primary transition-all" href="proposal.html">운영제안</a>
+                    <a class="mobile-nav-link text-white hover:text-primary transition-all" href="reference.html">레퍼런스</a>
+                    <a class="px-10 py-4 border border-primary text-primary hover:bg-primary hover:text-background-dark transition-all text-lg"
+                        href="contact.html">Contact</a>
+                </nav>
+            </div>
+        </div>
        
         <!-- Center Content -->
         <div class="relative z-20 flex flex-col items-center justify-center h-full text-center px-4">
             <p class="text-primary text-sm font-medium tracking-[0.5em] mb-6 opacity-0 animate-reveal delay-5s uppercase">EST. 1998 — Real Estate Excellence</p>
-            <h1 class="font-serif text-6xl md:text-8xl lg:text-9xl font-light mb-8 max-w-6xl leading-tight">
+            <h1 class="font-serif text-6xl md:text-8xl lg:text-9xl font-light mb-8 max-w-6xl leading-tight text-white">
                 <span class="opacity-0 animate-reveal delay-5-5s">현명한 선택,</span><br />
                 <span class="opacity-0 animate-reveal delay-6-5s block mt-2">국토포레스</span>
             </h1>
@@ -458,6 +478,30 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Menu Logic
+            const menuOpen = document.getElementById('menu-open');
+            const menuClose = document.getElementById('menu-close');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+            function toggleMenu(isOpen) {
+                if (isOpen) {
+                    mobileMenu.classList.remove('translate-x-full', 'opacity-0', 'invisible');
+                    document.body.style.overflow = 'hidden'; // Prevent scrolling
+                } else {
+                    mobileMenu.classList.add('translate-x-full', 'opacity-0', 'invisible');
+                    document.body.style.overflow = '';
+                }
+            }
+
+            menuOpen.addEventListener('click', () => toggleMenu(true));
+            menuClose.addEventListener('click', () => toggleMenu(false));
+            
+            // Close menu when clicking links
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => toggleMenu(false));
+            });
+
             // Video end transition
             const heroVideo = document.getElementById('hero-video');
             if (heroVideo) {
