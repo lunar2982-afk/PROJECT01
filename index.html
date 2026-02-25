@@ -44,43 +44,22 @@
             background: linear-gradient(to bottom, rgba(34, 30, 16, 0.4) 0%, rgba(34, 30, 16, 0.2) 50%, rgba(34, 30, 16, 0.8) 100%);
         }
 
-        /* Effect 2: Cinematic Reveal (Blur) */
+        /* Effect 2: Cinematic Reveal (Blur + Fade + Slide) */
         @keyframes cinematic-reveal {
             0% { opacity: 0; filter: blur(15px); transform: translateY(20px); }
             100% { opacity: 1; filter: blur(0); transform: translateY(0); }
-        }
-
-        /* Effect 3: Typing Effect */
-        @keyframes typing {
-            from { width: 0; opacity: 1; }
-            to { width: 100%; opacity: 1; }
-        }
-
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: #f2b90d; }
         }
 
         .animate-reveal {
             animation: cinematic-reveal 2.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
         }
 
-        .animate-typing {
-            display: inline-block;
-            overflow: hidden;
-            white-space: nowrap;
-            border-right: 2px solid transparent;
-            animation: 
-                typing 2s steps(15, end) forwards,
-                blink-caret .75s step-end 4;
-        }
-
-        /* 5-Second Base Delays */
+        /* Sequential Delays starting from 5s */
         .delay-5s { animation-delay: 5s; }
         .delay-5-5s { animation-delay: 5.5s; }
-        .delay-7s { animation-delay: 7s; }
-        .delay-8s { animation-delay: 8s; }
-        .delay-9s { animation-delay: 9s; }
+        .delay-6-5s { animation-delay: 6.5s; }
+        .delay-7-5s { animation-delay: 7.5s; }
+        .delay-8-5s { animation-delay: 8.5s; }
 
         /* Cinematic Ken Burns Effect */
         @keyframes ken-burns-hero {
@@ -177,11 +156,11 @@
         <div class="relative z-20 flex flex-col items-center justify-center h-full text-center px-4">
             <p class="text-primary text-sm font-medium tracking-[0.5em] mb-6 opacity-0 animate-reveal delay-5s uppercase">EST. 1998 — Real Estate Excellence</p>
             <h1 class="font-serif text-6xl md:text-8xl lg:text-9xl font-light mb-8 max-w-6xl leading-tight">
-                <span class="animate-typing delay-5-5s opacity-0">현명한 선택,</span><br />
-                <span class="opacity-0 animate-reveal delay-7s block mt-2">국토포레스</span>
+                <span class="opacity-0 animate-reveal delay-5-5s">현명한 선택,</span><br />
+                <span class="opacity-0 animate-reveal delay-6-5s block mt-2">국토포레스</span>
             </h1>
-            <div class="w-24 h-px bg-primary/50 mb-8 opacity-0 animate-reveal delay-8s"></div>
-            <p class="max-w-xl text-lg text-white/70 font-light tracking-wide leading-relaxed opacity-0 animate-reveal delay-9s">
+            <div class="w-24 h-px bg-primary/50 mb-8 opacity-0 animate-reveal delay-7-5s"></div>
+            <p class="max-w-xl text-lg text-white/70 font-light tracking-wide leading-relaxed opacity-0 animate-reveal delay-8-5s">
                 Pioneering the future of luxury living and commercial architecture through visionary investment and sustainable growth.
             </p>
         </div>
