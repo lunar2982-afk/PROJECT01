@@ -626,6 +626,52 @@
 
             const revealElements = document.querySelectorAll('.scroll-reveal');
             revealElements.forEach(el => revealObserver.observe(el));
+
+            // --- Performance Metrics Auto-playing Animation ---
+            const metricItems = document.querySelectorAll('.metric-item');
+            let currentMetricIndex = 0;
+            let metricInterval;
+            let isMetricPaused = false;
+
+            function playNextMetric() {
+                if (isMetricPaused) return;
+                
+                // Remove active class from all metrics
+                metricItems.forEach(item => item.classList.remove('active'));
+                
+                // Add active class to current metric
+                if (metricItems[currentMetricIndex]) {
+                    metricItems[currentMetricIndex].classList.add('active');
+                }
+                
+                // Update index for next turn
+                currentMetricIndex = (currentMetricIndex + 1) % metricItems.length;
+            }
+
+            function startMetricAnimation() {
+                if (metricItems.length > 0) {
+                    metricInterval = setInterval(playNextMetric, 3000); // 3 seconds interval
+                }
+            }
+
+            // Pause on hover to let manual interaction take precedence
+            const metricsContainer = document.getElementById('metrics-container');
+            if (metricsContainer) {
+                metricsContainer.addEventListener('mouseenter', () => {
+                    isMetricPaused = true;
+                    // When user hovers, remove our automated active classes to let hover take over
+                    metricItems.forEach(item => item.classList.remove('active'));
+                });
+                metricsContainer.addEventListener('mouseleave', () => {
+                    isMetricPaused = false;
+                });
+            }
+
+            // Initial start with a slight delay after page load
+            setTimeout(() => {
+                playNextMetric();
+                startMetricAnimation();
+            }, 2000);
         });
     </script>
 
