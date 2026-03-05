@@ -79,6 +79,20 @@
                 hero-visual-dynamic 3s ease-out forwards,
                 ken-burns-subtle 20s ease-in-out infinite 3s;
         }
+
+        /* Auto-play Active State Styles */
+        .process-step.active > div {
+            @apply border-primary bg-white shadow-2xl -translate-y-4;
+        }
+        .process-step.active span.text-4xl {
+            @apply text-primary/20;
+        }
+        .process-step.active h3 {
+            @apply text-primary;
+        }
+        .process-step.active .progress-bar {
+            @apply w-full;
+        }
     </style>
 </head>
 
@@ -137,7 +151,7 @@
         </section>
 
         <!-- Operation Process Section -->
-        <section class="py-24 bg-white">
+        <section class="py-24 bg-white overflow-hidden">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="text-center mb-20">
                     <span class="text-luxia-gold font-bold tracking-[0.2em] text-sm uppercase">Process</span>
@@ -145,55 +159,60 @@
                     <p class="text-slate-500 mt-6 max-w-2xl mx-auto">체계적이고 과학적인 분석을 통해 성공적인 분양 결과를 도출하는 국토포레스만의 핵심 운영 프로세스입니다.</p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-5 gap-8 relative">
+                <div id="process-steps-container" class="grid grid-cols-1 md:grid-cols-5 gap-8 relative">
                     <!-- Step 1 -->
-                    <div class="group">
-                        <div class="bg-slate-50 p-8 rounded-lg border-t-4 border-slate-100 group-hover:border-primary transition-all duration-300 h-full">
-                            <span class="text-4xl font-bold text-slate-200 group-hover:text-primary/20 transition-colors">01</span>
-                            <h3 class="text-xl font-bold text-slate-900 mt-4 mb-4">시장 분석 및<br/>환경 검토</h3>
+                    <div class="process-step group relative">
+                        <div class="bg-slate-50 p-8 rounded-lg border-t-4 border-slate-100 group-hover:border-primary group-hover:bg-white group-hover:shadow-2xl transition-all duration-500 h-full transform group-hover:-translate-y-4 relative z-10">
+                            <span class="text-4xl font-bold text-slate-200 group-hover:text-primary/20 transition-all duration-500">01</span>
+                            <h3 class="text-xl font-bold text-slate-900 mt-4 mb-4 group-hover:text-primary transition-all duration-500">시장 분석 및<br/>환경 검토</h3>
                             <p class="text-slate-600 text-sm leading-relaxed">
                                 사업지 주변 시세 분석, 수요 계층 파악 및 입지적 장단점을 철저히 분석하여 기초 데이터를 확보합니다.
                             </p>
+                            <div class="progress-bar absolute bottom-0 left-0 w-0 h-1 bg-primary group-hover:w-full transition-all duration-500"></div>
                         </div>
                     </div>
                     <!-- Step 2 -->
-                    <div class="group">
-                        <div class="bg-slate-50 p-8 rounded-lg border-t-4 border-slate-100 group-hover:border-primary transition-all duration-300 h-full">
-                            <span class="text-4xl font-bold text-slate-200 group-hover:text-primary/20 transition-colors">02</span>
-                            <h3 class="text-xl font-bold text-slate-900 mt-4 mb-4">마케팅 전략<br/>수립</h3>
+                    <div class="process-step group relative">
+                        <div class="bg-slate-50 p-8 rounded-lg border-t-4 border-slate-100 group-hover:border-primary group-hover:bg-white group-hover:shadow-2xl transition-all duration-500 h-full transform group-hover:-translate-y-4 relative z-10">
+                            <span class="text-4xl font-bold text-slate-200 group-hover:text-primary/20 transition-all duration-500">02</span>
+                            <h3 class="text-xl font-bold text-slate-900 mt-4 mb-4 group-hover:text-primary transition-all duration-500">마케팅 전략<br/>수립</h3>
                             <p class="text-slate-600 text-sm leading-relaxed">
                                 분석 데이터를 기반으로 최적의 분양가 산정 및 타겟 맞춤형 홍보 전략을 기획합니다.
                             </p>
+                            <div class="progress-bar absolute bottom-0 left-0 w-0 h-1 bg-primary group-hover:w-full transition-all duration-500"></div>
                         </div>
                     </div>
                     <!-- Step 3 -->
-                    <div class="group">
-                        <div class="bg-slate-50 p-8 rounded-lg border-t-4 border-slate-100 group-hover:border-primary transition-all duration-300 h-full">
-                            <span class="text-4xl font-bold text-slate-200 group-hover:text-primary/20 transition-colors">03</span>
-                            <h3 class="text-xl font-bold text-slate-900 mt-4 mb-4">조직 구성 및<br/>전문 교육</h3>
+                    <div class="process-step group relative">
+                        <div class="bg-slate-50 p-8 rounded-lg border-t-4 border-slate-100 group-hover:border-primary group-hover:bg-white group-hover:shadow-2xl transition-all duration-500 h-full transform group-hover:-translate-y-4 relative z-10">
+                            <span class="text-4xl font-bold text-slate-200 group-hover:text-primary/20 transition-all duration-500">03</span>
+                            <h3 class="text-xl font-bold text-slate-900 mt-4 mb-4 group-hover:text-primary transition-all duration-500">조직 구성 및<br/>전문 교육</h3>
                             <p class="text-slate-600 text-sm leading-relaxed">
                                 현장 특성에 맞는 정예 인력을 선발하고, 프로젝트 이해도를 높이기 위한 전문 교육을 실시합니다.
                             </p>
+                            <div class="progress-bar absolute bottom-0 left-0 w-0 h-1 bg-primary group-hover:w-full transition-all duration-500"></div>
                         </div>
                     </div>
                     <!-- Step 4 -->
-                    <div class="group">
-                        <div class="bg-slate-50 p-8 rounded-lg border-t-4 border-slate-100 group-hover:border-primary transition-all duration-300 h-full">
-                            <span class="text-4xl font-bold text-slate-200 group-hover:text-primary/20 transition-colors">04</span>
-                            <h3 class="text-xl font-bold text-slate-900 mt-4 mb-4">홍보 및<br/>판촉 활동</h3>
+                    <div class="process-step group relative">
+                        <div class="bg-slate-50 p-8 rounded-lg border-t-4 border-slate-100 group-hover:border-primary group-hover:bg-white group-hover:shadow-2xl transition-all duration-500 h-full transform group-hover:-translate-y-4 relative z-10">
+                            <span class="text-4xl font-bold text-slate-200 group-hover:text-primary/20 transition-all duration-500">04</span>
+                            <h3 class="text-xl font-bold text-slate-900 mt-4 mb-4 group-hover:text-primary transition-all duration-500">홍보 및<br/>판촉 활동</h3>
                             <p class="text-slate-600 text-sm leading-relaxed">
                                 온/오프라인 채널을 동원하여 잠재 고객을 발굴하고 분양 열기를 고조시키는 다각도 홍보를 진행합니다.
                             </p>
+                            <div class="progress-bar absolute bottom-0 left-0 w-0 h-1 bg-primary group-hover:w-full transition-all duration-500"></div>
                         </div>
                     </div>
                     <!-- Step 5 -->
-                    <div class="group">
-                        <div class="bg-slate-50 p-8 rounded-lg border-t-4 border-slate-100 group-hover:border-primary transition-all duration-300 h-full">
-                            <span class="text-4xl font-bold text-slate-200 group-hover:text-primary/20 transition-colors">05</span>
-                            <h3 class="text-xl font-bold text-slate-900 mt-4 mb-4">분양 실시 및<br/>사후 관리</h3>
+                    <div class="process-step group relative">
+                        <div class="bg-slate-50 p-8 rounded-lg border-t-4 border-slate-100 group-hover:border-primary group-hover:bg-white group-hover:shadow-2xl transition-all duration-500 h-full transform group-hover:-translate-y-4 relative z-10">
+                            <span class="text-4xl font-bold text-slate-200 group-hover:text-primary/20 transition-all duration-500">05</span>
+                            <h3 class="text-xl font-bold text-slate-900 mt-4 mb-4 group-hover:text-primary transition-all duration-500">분양 실시 및<br/>사후 관리</h3>
                             <p class="text-slate-600 text-sm leading-relaxed">
                                 계약 체결부터 잔금 납부, 입주 관리까지 고객 만족을 최우선으로 하는 원스톱 서비스를 제공합니다.
                             </p>
+                            <div class="progress-bar absolute bottom-0 left-0 w-0 h-1 bg-primary group-hover:w-full transition-all duration-500"></div>
                         </div>
                     </div>
                 </div>
@@ -471,6 +490,49 @@
             mobileLinks.forEach(link => {
                 link.addEventListener('click', () => toggleMenu(false));
             });
+
+            // --- Auto-playing Sequential Animation for Process Steps ---
+            const steps = document.querySelectorAll('.process-step');
+            let currentStepIndex = 0;
+            let animationInterval;
+            let isPaused = false;
+
+            function playNextStep() {
+                if (isPaused) return;
+                
+                // Remove active class from all steps
+                steps.forEach(step => step.classList.remove('active'));
+                
+                // Add active class to current step
+                if (steps[currentStepIndex]) {
+                    steps[currentStepIndex].classList.add('active');
+                }
+                
+                // Update index for next turn
+                currentStepIndex = (currentStepIndex + 1) % steps.length;
+            }
+
+            function startAnimation() {
+                if (steps.length > 0) {
+                    animationInterval = setInterval(playNextStep, 2500); // 2.5 seconds interval
+                }
+            }
+
+            // Pause on hover to let manual interaction take precedence
+            const container = document.getElementById('process-steps-container');
+            if (container) {
+                container.addEventListener('mouseenter', () => {
+                    isPaused = true;
+                    steps.forEach(step => step.classList.remove('active'));
+                });
+                container.addEventListener('mouseleave', () => {
+                    isPaused = false;
+                });
+            }
+
+            // Initial start
+            playNextStep();
+            startAnimation();
         });
     </script>
 
