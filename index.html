@@ -67,6 +67,26 @@
             transform: translateY(0);
         }
 
+        /* Metric Item Auto-play Styles */
+        .metric-item {
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .metric-item.active {
+            transform: translateY(-15px);
+        }
+        .metric-item.active .w-24 {
+            @apply border-primary bg-primary/5 shadow-[0_0_30px_rgba(242,185,13,0.2)];
+        }
+        .metric-item.active h4 {
+            @apply text-primary scale-110;
+            transition: all 0.6s ease;
+        }
+        .metric-item.active .material-symbols-outlined {
+            @apply scale-110 text-white;
+            background-color: #f2b90d;
+            border-radius: 50%;
+        }
+
         /* Sequential Delays starting from 3s */
         .delay-5s { animation-delay: 3s; }
         .delay-5-5s { animation-delay: 3.5s; }
@@ -202,9 +222,9 @@
     <!-- Performance Metrics Section -->
     <section class="bg-background-dark py-32 border-b border-white/5 relative scroll-reveal">
         <div class="max-w-7xl mx-auto px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-12">
+            <div id="metrics-container" class="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-12">
                 <!-- Metric 1: History -->
-                <div class="relative flex flex-col items-center text-center group">
+                <div class="metric-item relative flex flex-col items-center text-center group">
                     <div class="mb-8 relative">
                         <div class="w-24 h-24 border border-primary/20 rounded-full flex items-center justify-center group-hover:border-primary transition-all duration-700">
                             <span class="material-symbols-outlined text-primary text-4xl group-hover:scale-110 transition-transform duration-500">history</span>
@@ -224,7 +244,7 @@
                 </div>
 
                 <!-- Metric 2: Performance -->
-                <div class="relative flex flex-col items-center text-center group">
+                <div class="metric-item relative flex flex-col items-center text-center group">
                     <div class="mb-8 relative">
                         <div class="w-24 h-24 border border-primary/20 rounded-full flex items-center justify-center group-hover:border-primary transition-all duration-700">
                             <span class="material-symbols-outlined text-primary text-4xl group-hover:scale-110 transition-transform duration-500">analytics</span>
@@ -243,7 +263,7 @@
                 </div>
 
                 <!-- Metric 3: Satisfaction -->
-                <div class="relative flex flex-col items-center text-center group">
+                <div class="metric-item relative flex flex-col items-center text-center group">
                     <div class="mb-8 relative">
                         <div class="w-24 h-24 border border-primary/20 rounded-full flex items-center justify-center group-hover:border-primary transition-all duration-700">
                             <span class="material-symbols-outlined text-primary text-4xl group-hover:scale-110 transition-transform duration-500">verified</span>
