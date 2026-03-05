@@ -54,6 +54,19 @@
             animation: cinematic-reveal 2.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
         }
 
+        /* Scroll Reveal Effect */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+            will-change: opacity, transform;
+        }
+
+        .scroll-reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         /* Sequential Delays starting from 3s */
         .delay-5s { animation-delay: 3s; }
         .delay-5-5s { animation-delay: 3.5s; }
@@ -187,7 +200,7 @@
     </main>
 
     <!-- Performance Metrics Section -->
-    <section class="bg-background-dark py-32 border-b border-white/5 relative">
+    <section class="bg-background-dark py-32 border-b border-white/5 relative scroll-reveal">
         <div class="max-w-7xl mx-auto px-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-12">
                 <!-- Metric 1: History -->
@@ -301,7 +314,7 @@
 
     <!-- Content Sections (Teasers) -->
     <section
-        class="relative z-30 bg-background-dark px-8 py-32 grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-white/5">
+        class="relative z-30 bg-background-dark px-8 py-32 grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-white/5 scroll-reveal">
         <div class="space-y-6 group">
             <div class="aspect-[4/5] overflow-hidden rounded-lg">
                 <img alt="Luxury corporate architecture"
@@ -346,7 +359,8 @@
     </section>
 
     <!-- Featured Projects Carousel Section -->
-    <section class="bg-background-dark py-32 border-t border-white/5 relative overflow-hidden">
+    <section class="bg-background-dark py-32 border-t border-white/5 relative overflow-hidden scroll-reveal">
+
         <div class="max-w-7xl mx-auto px-8">
             <div class="flex flex-col md:flex-row justify-between items-end mb-16 space-y-6 md:space-y-0">
                 <div class="space-y-4">
@@ -439,7 +453,7 @@
     </section>
 
     <!-- Directions (Location) Section -->
-    <section class="bg-background-dark px-8 py-32 border-t border-white/5">
+    <section class="bg-background-dark px-8 py-32 border-t border-white/5 scroll-reveal">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
                 <!-- Left: Info Content -->
@@ -574,6 +588,24 @@
                     },
                 },
             });
+
+            // Scroll Reveal Logic
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, observerOptions);
+
+            const revealElements = document.querySelectorAll('.scroll-reveal');
+            revealElements.forEach(el => revealObserver.observe(el));
         });
     </script>
 
